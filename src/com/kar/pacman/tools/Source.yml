@@ -242,12 +242,12 @@ data:
 
     turnin.vinscanner.licensekey.plid.97={{ index .Values "turnin.vinscanner.licensekey.plid.ninety_seven" }}
     
-    turnin.vinscanner.licensekey.plid.97={{ index .Values "turnin.vinscanner.licensekey.plid.ninety_seven" }}
+    turnin.vinscanner.licensekey.plid.ninety_seven={{ index .Values "turnin.vinscanner.licensekey.plid.ninety_seven" }}
 
     turnin.vinscanner.licensekey.plid.98={{ index .Values "turnin.vinscanner.licensekey.plid.ninety_eight" }}
     
-    turnin.vinscanner.licensekey.plid.98={{ index .Values "turnin.vinscanner.licensekey.plid.ninety_eight" }}
+    turnin.vinscanner.licensekey.plid.ninety_eight={{ index .Values "turnin.vinscanner.licensekey.plid.ninety_eight" }}
 
     turnin.vinscanner.licensekey.plid.99={{ index .Values "turnin.vinscanner.licensekey.plid.ninety_nine" }}
     
-    turnin.vinscanner.licensekey.plid.99={{ index .Values "turnin.vinscanner.licensekey.plid.ninety_nine" }}
+    turnin.vinscanner.licensekey.plid.ninety_nine={{ index .Values "turnin.vinscanner.licensekey.plid.ninety_nine" }}
