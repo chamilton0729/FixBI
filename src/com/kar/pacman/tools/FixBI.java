@@ -20,34 +20,34 @@ public class FixBI {
 		
 		//Normal usage
 		if (args.length > 0) {
-			int result = fixbi.processFiles(args[0], args[1], "src/com/kar/pacman/tools/Exclude.yml");
+			int result = fixbi.processFile(args[0]);
 			System.out.println("============================");
 			System.out.println("Missing Keys " + result);
 		} else {
 			System.out.println("No arguments passed to the application");
-			System.out.println("FixBI <Source File> <Needs File>");
+			System.out.println("FixBI <Needs File>");
 		}
 				
 		System.exit(0);
 	}
 	
-	private int processFiles(String file1, String file2, String excludeFile) {
+	private int processFile(String file1) {
 		int result = 0;
 		List<String> excludeKeys = new ArrayList<String>();
+		List<String> sourceKeys = new ArrayList<String>();
 		List<String> file1Keys = new ArrayList<String>();
-		List<String> file2Keys = new ArrayList<String>();
 		//Build Exclude Keys List
-		excludeKeys = exclusionKeys(excludeFile);
+		excludeKeys = exclusionKeys("src/com/kar/pacman/tools/Exclude.yml");
+		//Build Keys from Source.yml
+		sourceKeys = grabKeysFromFile("src/com/kar/pacman/tools/Source.yml", excludeKeys);
 		//Build Keys from file1
 		file1Keys = grabKeysFromFile(file1, excludeKeys);
-		//Build Keys from file2
-		file2Keys = grabKeysFromFile(file2, excludeKeys);
 		//Result List
 		List<String> missingKeys = new ArrayList<String>();
 		
-		//Check if Keys from file1 (source) exist in file2 (incomplete file)
-		for (String oneKey : file1Keys) {
-			if (file2Keys.contains(oneKey) == false) {
+		//Check if Keys from Source exist in file1 (incomplete file)
+		for (String oneKey : sourceKeys) {
+			if (file1Keys.contains(oneKey) == false) {
 				missingKeys.add(oneKey);
 			}
 		}
@@ -56,7 +56,7 @@ public class FixBI {
 		if (missingKeys.size() > 0) {
 			//Output the missing keys
 			System.out.println("============================");
-			System.out.println("	      Missing   		");
+			System.out.println("          Missing           ");
 			System.out.println("============================");
 			for (String missingKey : missingKeys) {
 				System.out.println(missingKey);
