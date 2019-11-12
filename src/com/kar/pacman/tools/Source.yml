@@ -1,0 +1,253 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: '{{ include "app.name" . }}-commonbi-properties'
+data:
+  com.openauction.password.admin.url: '{{index .Values "com.openauction.password.admin.url"}}'
+  com.openauction.postsalesservice.credentials.password: '{{index .Values "com.openauction.postsalesservice.credentials.password"}}'
+  template.ejs: >
+    com.openauction.documentsURL.prefix={{ index .Values "com.openauction.documentsURL.prefix"}}
+
+    com.openauction.fax.fromUser={{ index .Values "com.openauction.fax.fromUser"}}
+
+    com.openauction.fax.owner={{ index .Values "com.openauction.fax.owner"}}
+
+    com.openauction.postsalesservice.credentials.userid={{ index .Values "com.openauction.postsalesservice.credentials.userid"}}
+
+    com.openauction.postsalesservice.credentials.password=<%- secrets["com.openauction.postsalesservice.credentials.password"] %>
+
+    com.openauction.postsalesservice.url={{ index .Values "com.openauction.postsalesservice.url"}}
+
+    com.openauction.productionSupportEmailAddress={{ index .Values "com.openauction.productionSupportEmailAddress"}}
+
+    com.openauction.sendEmails={{ index .Values "com.openauction.sendEmails"}}
+
+    com.openauction.sendFaxes={{ index .Values "com.openauction.sendFaxes"}}
+
+    com.openauction.sendInspectionRequest={{ index .Values "com.openauction.sendInspectionRequest"}}
+
+    com.openauction.transportURL={{ index .Values "com.openauction.transportURL"}}
+
+    ds2k7.URL={{ index .Values "ds2k7.URL"}}
+
+    com.openauction.showVehicleSellerLogos={{ index .Values "com.openauction.showVehicleSellerLogos"}}
+
+    com.openauction.vehicleSellerLogosPrefix={{ index .Values "com.openauction.vehicleSellerLogosPrefix"}}
+
+    com.openauction.idealManageListingURL={{ index .Values "com.openauction.idealManageListingURL"}}
+
+    com.openauction.ideal.url={{ index .Values "com.openauction.ideal.url"}}
+
+    com.openauction.enable.ideal.sso={{ index .Values "com.openauction.enable.ideal.sso"}}
+
+    com.openauction.leaseEndService.url={{ index .Values "com.openauction.leaseEndService.url"}}
+
+    ARIds2k7.URL={{ index .Values "ARIds2k7.URL"}}
+
+    VHR.URL={{ index .Values "VHR.URL"}}
+
+    com.openauction.vhr.send.flag={{ index .Values "com.openauction.vhr.send.flag"}}
+
+    com.openauction.legalDocumentsURL.prefix={{ index .Values "com.openauction.legalDocumentsURL.prefix"}}
+
+    transport.URL={{ index .Values "transport.URL"}}
+
+    com.openauction.credit_card.prod={{ index .Values "com.openauction.credit_card.prod"}}
+
+    mondello.fromEmailAddress.CDN={{ index .Values "mondello.fromEmailAddress.CDN"}}
+
+    com.openauction.documents.url.param.section.openlane.com={{ index .Values "com.openauction.documents.url.param.section.openlane.com"}}
+
+    com.openauction.documents.url.param.section.openlane.ca={{ index .Values "com.openauction.documents.url.param.section.openlane.ca"}}
+
+    com.openauction.documents.url.param.section.bmwpl={{ index .Values "com.openauction.documents.url.param.section.bmwpl"}}
+
+    com.openauction.documentsURL.param.section.postsalesCaCos={{ index .Values "com.openauction.documentsURL.param.section.postsalesCaCos"}}
+
+    com.openauction.documents.url.param.section.lemans={{ index .Values "com.openauction.documents.url.param.section.lemans"}}
+
+    com.openauction.documentsURL.param.section.lemon.law={{ index .Values "com.openauction.documentsURL.param.section.lemon.law"}}
+
+    com.openauction.documentsURL.param.section.certifcode={{ index .Values "com.openauction.documentsURL.param.section.certifcode"}}
+
+    com.openauction.documents.url.param.section.report={{ index .Values "com.openauction.documents.url.param.section.report"}}
+
+    com.openauction.sbo.mailmanListEmailAddress={{ index .Values "com.openauction.sbo.mailmanListEmailAddress"}}
+
+    VrARIds2k7.URL={{ index .Values "VrARIds2k7.URL"}}
+
+    VrARIEmailTo={{ index .Values "VrARIEmailTo"}}
+
+    com.openauction.hostname.pl1={{ index .Values "com.openauction.hostname.pl1"}}
+
+    com.openauction.hostname.pl29={{ index .Values "com.openauction.hostname.pl29"}}
+
+    com.openauction.password.admin.url=<%- secrets["com.openauction.password.admin.url"] %>
+
+    imola.webapi.url={{ index .Values "imola.webapi.url"}}
+
+    openauction.url={{ index .Values "openauction.url"}}
+
+    openauctionca.url={{ index .Values "openauctionca.url"}}
+
+    com.buy.immediately.web.service.exclude.cargroups={{ index .Values "com.buy.immediately.web.service.exclude.cargroups"}}
+
+    ms.search.engine.url.prefix={{ index .Values "ms.search.engine.url.prefix"}}
+
+    imola.login.context.web.api={{ index .Values "imola.login.context.web.api"}}
+
+    imola.auction.engine.web.api={{ index .Values "imola.auction.engine.web.api"}}
+
+    com.openauction.documents.url.param.section.logo={{ index .Values "com.openauction.documents.url.param.section.logo"}}
+
+    psi.image.section={{ index .Values "psi.image.section"}}
+
+    gaTrackerNumber={{ index .Values "gaTrackerNumber"}}
+
+    google.site.verification={{ index .Values "google.site.verification"}}
+
+    com.les.enable.maturity.billing={{ index .Values "com.les.enable.maturity.billing"}}
+
+    com.openauction.watchlist.similar.vehicles.odometerRange={{ index .Values "com.openauction.watchlist.similar.vehicles.odometerRange"}}
+
+    com.openauction.watchlist.similar.vehicles.distanceRadius={{ index .Values "com.openauction.watchlist.similar.vehicles.distanceRadius"}}
+
+    com.openauction.registration.form.internal.emails={{ index .Values "com.openauction.registration.form.internal.emails"}}
+
+    com.openauction.display.credit.card={{ index .Values "com.openauction.display.credit.card"}}
+
+    com.les.enable.cr.adjustment={{ index .Values "com.les.enable.cr.adjustment"}}
+
+    com.openauction.documentsURL.param.section.les={{ index .Values "com.openauction.documentsURL.param.section.les"}}
+
+    com.openauction.authorizedusers.internal.emails={{ index .Values "com.openauction.authorizedusers.internal.emails"}}
+
+    supported.blackBook.privatelabel.ids={{ index .Values "supported.blackBook.privatelabel.ids"}}
+
+    marketing.url={{ index .Values "marketing.url"}}
+
+    com.openauction.search.auto.submit={{ index .Values "com.openauction.search.auto.submit"}}
+
+    com.openauction.loan.maturity.manager.enabled={{ index .Values "com.openauction.loan.maturity.manager.enabled"}}
+
+    imola.grounded.vehicles.on.your.lot.url={{ index .Values "imola.grounded.vehicles.on.your.lot.url"}}
+
+    window.sticker.url={{ index .Values "window.sticker.url"}}
+
+    window.sticker.report.service.url={{ index .Values "window.sticker.report.service.url"}}
+
+    com.openauction.documentsURL.param.section.window.sticker={{ index .Values "com.openauction.documentsURL.param.section.window.sticker"}}
+
+    logincontext.url={{ index .Values "logincontext.url"}}
+
+    com.openauction.registration.form.internal.type2.emails={{ index .Values "com.openauction.registration.form.internal.type2.emails"}}
+
+    com.openlane.administrator.report.url={{ index .Values "com.openlane.administrator.report.url"}}
+
+    search.tips.document={{ index .Values "search.tips.document"}}
+
+    pdi.marketing.document.url={{ index .Values "pdi.marketing.document.url"}}
+
+    psi.marketing.document.url={{ index .Values "psi.marketing.document.url"}}
+
+    com.openauction.adesa.url={{ index .Values "com.openauction.adesa.url"}}
+
+    com.openauction.idealRestURL={{ index .Values "com.openauction.idealRestURL"}}
+
+    com.openauction.seller.interface.d2d.url={{ index .Values "com.openauction.seller.interface.d2d.url"}}
+
+    amg.search.engine.url.prefix={{ index .Values "amg.search.engine.url.prefix"}}
+
+    amg.search.blackbook.url.prefix={{ index .Values "amg.search.blackbook.url.prefix"}}
+
+    Chase.pdf.request.url={{ index .Values "Chase.pdf.request.url"}}
+
+    adesa.grade.info.url={{ index .Values "adesa.grade.info.url"}}
+
+    adesa.mvda.service.url={{ index .Values "adesa.mvda.service.url"}}
+
+    com.openauction.staticPreLoginAdesaURL={{ index .Values "com.openauction.staticPreLoginAdesaURL"}}
+
+    com.openauction.documentsURL.param.section.condition.report={{ index .Values "com.openauction.documentsURL.param.section.condition.report"}}
+
+    chart.engine.url.prefix={{ index .Values "chart.engine.url.prefix"}}
+
+    com.openauction.adesa.ca.url={{ index .Values "com.openauction.adesa.ca.url"}}
+
+    search.api.url.prefix={{ index .Values "search.api.url.prefix"}}
+
+    logger.rest.api.url={{ index .Values "logger.rest.api.url"}}
+
+    application.default.key={{ index .Values "application.default.key"}}
+
+    application.default.id={{ index .Values "application.default.id"}}
+
+    rtreg.dealerRegistrationServiceURL={{ index .Values "rtreg.dealerRegistrationServiceURL"}}
+
+    rtreg.openlaneCreateUserServiceURL={{ index .Values "rtreg.openlaneCreateUserServiceURL"}}
+
+    mytransaction.api.base.url={{ index .Values "mytransaction.api.base.url"}}
+
+    sha256encryptionKey={{ index .Values "sha256encryptionKey"}}
+
+    partnerSsoApiUrl={{ index .Values "partnerSsoApiUrl"}}
+
+    show.autobid.button={{ index .Values "show.autobid.button"}}
+
+    iaai.adesapromo.logapi.url={{ index .Values "iaai.adesapromo.logapi.url"}}
+
+    iaai.adesapromo.landing.url={{ index .Values "iaai.adesapromo.landing.url"}}
+
+    iaai.adesapromo.applicationKey={{ index .Values "iaai.adesapromo.applicationKey"}}
+
+    traderev.adesapromo.landing.url={{ index .Values "traderev.adesapromo.landing.url"}}
+
+    mytransactionpurchase.api.base.url={{ index .Values "mytransactionpurchase.api.base.url"}}
+
+    communicationcenter.url={{ index .Values "communicationcenter.url"}}
+
+    img.server.baseURL={{ index .Values "img.server.baseURL"}}
+
+    turnin.vinscanner.licensekey.plid.127={{ index .Values "turnin.vinscanner.licensekey.plid.one_hundred_and_twenty_seven"}}
+    
+    turnin.vinscanner.licensekey.plid.one_hundred_and_twenty_seven={{ index .Values "turnin.vinscanner.licensekey.plid.one_hundred_and_twenty_seven"}}
+
+    turnin.vinscanner.licensekey.plid.146={{ index .Values "turnin.vinscanner.licensekey.plid.one_hundred_and_forty_six"}}
+    
+    turnin.vinscanner.licensekey.plid.one_hundred_and_forty_six={{ index .Values "turnin.vinscanner.licensekey.plid.one_hundred_and_forty_six"}}
+
+    com.openauction.pictureURLPrefix={{ index .Values "com.openauction.pictureURLPrefix" }}
+
+    com.openauction.highResImageZipFileURLPrefix={{ index .Values "com.openauction.highResImageZipFileURLPrefix" }}
+
+    com.openauction.idealRegistrationURL={{ index .Values "com.openauction.idealRegistrationURL" }}
+
+    com.openauction.postsalesservice.ng.url={{ index .Values "com.openauction.postsalesservice.ng.url" }}
+
+    turnin.vinscanner.licensekey.plid.125={{ index .Values "turnin.vinscanner.licensekey.plid.one_hundred_and_twenty_five" }}
+    
+    turnin.vinscanner.licensekey.plid.one_hundred_and_twenty_five={{ index .Values "turnin.vinscanner.licensekey.plid.one_hundred_and_twenty_five" }}
+
+    turnin.vinscanner.licensekey.plid.130={{ index .Values "turnin.vinscanner.licensekey.plid.one_hundred_and_thirty" }}
+
+    turnin.vinscanner.licensekey.plid.one_hundred_and_thirty={{ index .Values "turnin.vinscanner.licensekey.plid.one_hundred_and_thirty" }}
+    
+    turnin.vinscanner.licensekey.plid.137={{ index .Values "turnin.vinscanner.licensekey.plid.one_hundred_and_thirty_seven" }}
+    
+    turnin.vinscanner.licensekey.plid.one_hundred_and_thirty_seven={{ index .Values "turnin.vinscanner.licensekey.plid.one_hundred_and_thirty_seven" }}
+
+    turnin.vinscanner.licensekey.plid.80={{ index .Values "turnin.vinscanner.licensekey.plid.eighty" }}
+    
+    turnin.vinscanner.licensekey.plid.eighty={{ index .Values "turnin.vinscanner.licensekey.plid.eighty" }}
+
+    turnin.vinscanner.licensekey.plid.97={{ index .Values "turnin.vinscanner.licensekey.plid.ninety_seven" }}
+    
+    turnin.vinscanner.licensekey.plid.97={{ index .Values "turnin.vinscanner.licensekey.plid.ninety_seven" }}
+
+    turnin.vinscanner.licensekey.plid.98={{ index .Values "turnin.vinscanner.licensekey.plid.ninety_eight" }}
+    
+    turnin.vinscanner.licensekey.plid.98={{ index .Values "turnin.vinscanner.licensekey.plid.ninety_eight" }}
+
+    turnin.vinscanner.licensekey.plid.99={{ index .Values "turnin.vinscanner.licensekey.plid.ninety_nine" }}
+    
+    turnin.vinscanner.licensekey.plid.99={{ index .Values "turnin.vinscanner.licensekey.plid.ninety_nine" }}
